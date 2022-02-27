@@ -28,7 +28,7 @@
             <td>{{ getNameDocumentType(client.idDocumentType) + " " + client.documentNumber }}</td>
             <td>{{ client.businessName }}</td>
             <td>{{ client.providers }}</td>
-            <td>{{ client.salesLastYear }}</td>
+            <td>{{ client.salesLastYear | currency}}</td>
             <td>
                 <button class="button-icon" (click)="editClient(client)">
                     <i class="fa fa-pencil"></i>
@@ -76,7 +76,7 @@
                     </tr>
                     <tr>
                         <td>Ventas del ultimo año:</td>
-                        <td>{{ client.salesLastYear }}</td>
+                        <td>{{ client.salesLastYear | currency }}</td>
                     </tr>
                 </tbody>
             </table>

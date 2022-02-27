@@ -20,6 +20,7 @@ export class CreateCustomerComponent implements OnInit {
   providers: Array<Provider> = []
   providersSelected: Array<Provider> = []
   providersByBd: Array<Provider> = []
+  removeProvidersBd: Array<Provider> = []
 
   idProvider : number
   client: ClientModel
@@ -114,9 +115,10 @@ export class CreateCustomerComponent implements OnInit {
   }
 
   removeProvider(id: number, action: string){
+
     this.providersSelected = this.providersSelected.filter(p => p.idProvider != id)
     this.providers.filter(p => p.idProvider == id)[0].show = true
-
+    
   }
 
   save(){
@@ -140,19 +142,9 @@ export class CreateCustomerComponent implements OnInit {
 
       if (this.clientExists) {
         this._clientService.Update(client, this.client.idClient).subscribe((data) => {
-          var providers : ClientProviderModel[] = []
-          this.providersSelected.forEach(item => {
-            var provider = new ClientProviderModel()
-            provider.idClient = this.client.idClient
-            provider.idProvider = item.idProvider
-            provider.action = item.action
-            providers.push(provider)
-          })
-          this._clientService.AssignProviders(providers).subscribe(data => {
-            this._messageService.messageSuccessWithFunction("¡Cliente guardado!","El cliente se ha actualizado correctamente", () =>{
+            this._messageService.messageSuccessWithFunction("¡Cliente actualizado!","El cliente se ha actualizado correctamente", () =>{
               this._router.navigate(['/customer']);
             })
-          })
         })
       } else {
         this._clientService.Add(client).subscribe((data: number) => {
@@ -161,7 +153,7 @@ export class CreateCustomerComponent implements OnInit {
             var provider = new ClientProviderModel()
             provider.idClient = data
             provider.idProvider = item.idProvider
-            provider.action = item.action
+            provider.action = "Add"
             providers.push(provider)
           })
           this._clientService.AssignProviders(providers).subscribe(data => {

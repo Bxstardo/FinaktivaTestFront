@@ -1,0 +1,94 @@
+header {
+    background-color: rgb(64, 64, 64);
+    height: 125px;
+    margin: 0;
+}
+
+.header-network{
+    height: 39px;
+    background-color: #8DFFC9;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;  
+    justify-content: space-between;  
+}
+
+.header-menu{
+    height: 86px;
+    background-color: rgb(64, 64, 64);
+    padding: 0 50px;
+    display: flex;
+    align-items: center;    
+}
+
+.header-menu-content{
+    display: flex;
+    align-items: center;    
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+.header-network-content {
+    color: white
+}
+
+.header-network-content span {
+    font-weight: bold; 
+    font-size: 16px;
+    cursor: default;
+    transition: 0.3s;
+}
+
+.header-network-content .fa{
+    color: white;
+    font-size: 21px;
+    margin-right: 28px;
+    transition: 0.3s;
+}
+
+
+.header-network-content .fa:hover, .header-network-content span:hover{
+    color: white;
+    color:#404040;
+}
+
+.header-network-content a{
+    margin-left: 0;
+}
+
+
+.logo-finaktiva-completo{
+    width: 229px;
+    height: 38px;
+}
+
+a{
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 55px;
+    transition: 0.5s;
+}
+
+a:hover {
+    color:#8DFFC9;    
+}
+
+.button-logout {
+    margin-left: 60px;
+    border:#8DFFC9 1px solid;
+    border-radius: 5.75px;
+    background-color: #404040;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 21px;
+    color: white;
+    transition: 0.3s;
+}
+
+.button-logout:hover{
+    color: #404040;
+    background-color: #8DFFC9;
+}

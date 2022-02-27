@@ -1,0 +1,53 @@
+@import "~@ng-select/ng-select/themes/default.theme.css";
+/* You can add global styles to this file, and also import other style files */
+body{
+    padding: 0 !important ;
+    margin: 0 !important ;
+    font-family: monospace !important;
+}
+
+.container-page{
+    padding: 0 50px
+}
+
+.button-finaktiva {
+    border:#8DFFC9 1px solid;
+    border-radius: 5.75px;
+    background-color: #404040;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 21px;
+    color: white;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.button-finaktiva:hover{
+    color: #404040;
+    background-color: #8DFFC9;
+}
+
+.table-finaktiva{
+    background-color: #404040;
+    border: #404040;
+    color: white
+}
+
+td {
+    color:#404040 !important;
+    font-weight: bold;
+}
+
+.button-volver{
+    cursor: pointer;
+    font-weight: bold;
+    color:#404040;
+    font-size: 20px;
+    text-decoration: none;
+    margin-left: 20px;
+    transition:0.3s
+}
+
+.button-volver:hover{
+    color:#8DFFC9 
+}

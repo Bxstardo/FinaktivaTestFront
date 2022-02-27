@@ -1,0 +1,48 @@
+.icon-user{
+    font-size: 200px;
+    color:#8DFFC9
+}
+
+.card-user{
+    position: relative;
+    bottom:70px
+}
+
+.user-content{
+    z-index: 1;
+}
+
+section {
+    background-color: #404040;
+    color:white;
+    padding:auto;
+    width: 100%;
+    padding: 30px
+}
+
+section p{
+    padding-top:53px;
+    color:white;
+    font-weight: bold;
+}
+
+.button-icon{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+    font-size: 20px;
+	cursor: pointer;
+	outline: inherit;
+    margin-left:23px
+}
+
+.button-icon .fa{
+    transition: 0.3s;
+}
+
+.button-icon .fa:hover{
+    color:#8DFFC9
+}
+
+

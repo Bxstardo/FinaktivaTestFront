@@ -1,0 +1,62 @@
+<div class="row container-page">
+    <a class="button-volver mb-4" [routerLink]="['/customer']" routerLinkActive="router-link-active">Volver</a>
+    <h2 class="title" *ngIf="client == null">Crear Cliente</h2>
+    <h2 class="title" *ngIf="client != null">Actualizar Cliente</h2>
+
+
+    <form class="row col-12" [formGroup]="formRegister">
+        <div class="form-group">
+            <label>Nombres</label>
+            <input class="form-control" type="text" formControlName="names">
+        </div>
+        <div class="form-group">
+            <label>Apellidos</label>
+            <input class="form-control" type="text" formControlName="surnames">
+        </div>
+        <div class="form-group ">
+            <label>Tipo documento</label>
+            <select formControlName="idDocumentType" class="form-control">
+                <option disabled selected value="">
+                    Seleccione una opción
+                </option>
+                <option *ngFor="let item of documentType" [value]="item.idDocumentType">{{ item.name }}</option>
+            </select>
+        </div>
+        <div class="form-group ">
+            <label>Documento</label>
+            <input class="form-control" type="number" formControlName="documentNumber">
+        </div>
+        <div class="form-group">
+            <label>Rázon Social</label>
+            <input class="form-control" type="text" formControlName="businessName">
+        </div>
+        <div class="form-group">
+            <label>Proveedores</label>
+           
+            <div class="input-group">
+                <select [(ngModel)]="idProvider" [ngModelOptions]="{standalone: true}" class="form-control">
+                    <option disabled selected value="0">
+                        Seleccione una opción
+                    </option>
+                    <option *ngFor="let item of providers" [style]="item.show == true ? 'display:block' : 'display:none'" [value]="item.idProvider">{{ item.name }}</option>
+                </select>
+                <button class="btn btn-outline-secondary" type="button" (click)="addProvider()">Agregar</button>
+            </div>
+        </div>
+        <div class="form-group" *ngFor="let item of providersSelected as index">
+            <div class="input-group">
+                <input type="text" class="form-control"  [value]="item.name" disabled>
+                <button class="btn btn-outline-danger" type="button" (click)="removeProvider(item.idProvider)">Eliminar</button>
+            </div>
+        </div>
+    
+        <div class="form-group ">
+            <label>Ventas del ultimo año</label>
+            <input class="form-control" type="number" formControlName="salesLastYear">
+        </div>
+        <div class="form-group">
+            <button class="button-finaktiva" (click)="save()">Guardar</button>
+        </div>
+    </form>
+</div>
+

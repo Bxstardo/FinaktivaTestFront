@@ -1,0 +1,85 @@
+<div class="row container-page">
+    <div class="col-12 text-center user-content">
+        <i class="fa fa-user icon-user"></i>
+    </div>
+    <div class="col-12 d-flex justify-content-center text-center card-user">
+        <section class="p-auto">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+        </section>
+    </div>
+    <div class="col-12 d-flex justify-content-end">
+        <a class="button-finaktiva" [routerLink]="['/customer/create']" routerLinkActive="router-link-active">Agregar</a>
+    </div>
+    <div class="col-12 d-flex justify-content-end text-center">
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr class="table-finaktiva">
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Documento</th>
+                    <th scope="col">Rázon social</th>
+                    <th scope="col">Proveedores</th>
+                    <th scope="col">Venta del ultimo año</th>
+                    <th scope="col">Acción</th>
+                </tr>
+            </thead>
+        <tbody>
+          <tr *ngFor="let client of clients">
+            <th>{{ client.names + " " + client.surnames}}</th>
+            <td>{{ getNameDocumentType(client.idDocumentType) + " " + client.documentNumber }}</td>
+            <td>{{ client.businessName }}</td>
+            <td>{{ client.providers }}</td>
+            <td>{{ client.salesLastYear }}</td>
+            <td>
+                <button class="button-icon" (click)="editClient(client)">
+                    <i class="fa fa-pencil"></i>
+                </button>
+                <button class="button-icon" (click)="showDetail(client.idClient)">
+                    <i class="fa fa-eye"></i>
+                </button>
+                <button class="button-icon" (click)="removeClient(client.idClient)">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </td>
+          </tr>
+       
+        </tbody>
+      
+        </table>
+    </div>
+    
+</div>
+
+
+<modal #myModal>
+    <modal-header>
+        <h5>Detalle de cliente</h5>
+    </modal-header>
+    <modal-content class="modal-body">
+        <div class="d-flex justify-content-center">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td>Nombre:</td>
+                        <td>{{ client.names + " " + client.surnames }}</td>
+                    </tr>
+                    <tr>
+                        <td>Documento:</td>
+                        <td>{{ client.documentNumber }}</td>
+                    </tr>
+                    <tr>
+                        <td>Rázon Social:</td>
+                        <td>{{ client.businessName }}</td>
+                    </tr>
+                    <tr>
+                        <td>Proveedores:</td>
+                        <td>{{ client.providers }}</td>
+                    </tr>
+                    <tr>
+                        <td>Ventas del ultimo año:</td>
+                        <td>{{ client.salesLastYear }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </modal-content>
+</modal>

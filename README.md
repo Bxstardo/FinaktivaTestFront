@@ -1,6 +1,13 @@
 # CustomerFinaktiva.Web
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.1.
+## Api url config
+Dirijase a la siguiente ruta
+"C:\Users\martinezb\source\repos\CustomerFinaktiva.Api\CustomerFinaktiva.Web\src\app\Services"
+y en el cambie el puerto de la url en la cual esta corriendo el IIS Express del back
+
+```python
+ urlApi: string = "https://localhost:44336/api/"
+```
 
 ## Development server
 
